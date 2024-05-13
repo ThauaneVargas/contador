@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Contador de Caracteres</title>
+<link rel="stylesheet" href="styler.css">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+</head>
+<body>
+  <h1>Contador de Caracteres</h1>
+  <input type="text" id="texto-entrada" placeholder="Digite um texto">
+  <p id="resultado"></p>
+
+  <script>
+    const textoEntrada = document.getElementById('texto-entrada');
+    const resultado = document.getElementById('resultado');
+
+    textoEntrada.addEventListener('input', () => {
+      const texto = textoEntrada.value;
+      const numeroCaracteres = contarCaracteres(texto);
+      resultado.textContent = `O texto possui ${numeroCaracteres} caracteres.`;
+    });
+
+    function contarCaracteres(texto) {
+      const textoSemEspacos = texto.replace(/\s/g, '');
+      return textoSemEspacos.length;
+    }
+  </script>
+</body>
+</html>
